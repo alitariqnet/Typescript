@@ -98,4 +98,12 @@ interface User {
     return [1,2,3]
   }
 
-  
+  class Car {
+    wheels: number = 4
+
+    drive(){
+        console.log('the car is driving')
+    }
+}
+let myCar: Car = new Car()
+console.log(myCar.drive())

@@ -1,0 +1,26 @@
+<html>
+<head>
+<script>
+const request = new XMLHttpRequest();
+request.getEventListener('readystatechange', ()=>{
+    console.log(request, request.readyState);
+});
+request.open('GET','https://jsonplaceholder.typicode.com/todos');
+request.send();
+
+class Car {
+    wheels: number = 4
+
+    drive(){
+        console.log('the car is driving')
+    }
+}
+myCar: Car = new Car()
+Car.drive
+</script>
+</head>
+
+<body>
+    World
+</body>
+</html>
