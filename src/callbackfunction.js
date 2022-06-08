@@ -16,4 +16,4 @@ myFun(function(value){
 let people = ['umar','ali','hassan'];
 // forEach() method expects a callback function
 // as an argument
-people.forEach((person)=>console.log(person));
+people.forEach(person => console.log(person));
