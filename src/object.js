@@ -10,15 +10,23 @@ let user =
     },
     logout: function(){
         console.log(`${this.name} logged out`);
+    },
+    aging: function(){
+        // call this funtion on every birthday
+        this.age++;
+        return this;
     }
 
 };
 
 console.log(user);
-user.login();
+user.aging().aging().aging();
 console.log(user.name);
 console.log(user['age']);
 
 // user['age'] = 25;
 // console.log(user['age']);
 user.logout();
+
+// Math object
+
