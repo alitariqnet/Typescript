@@ -30,3 +30,10 @@ user.logout();
 
 // Math object
 
+console.log(Math);
+console.log(Math.PI);
+console.log(Math.E);
+console.log(Math.exp(2));
+console.log(Math.round(Math.exp(2)));
+// console log random number between 0 and 10
+console.log(Math.round(Math.random()*10));
