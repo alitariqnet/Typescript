@@ -1,3 +1,4 @@
+console.log('inside object.js now');
 let user = 
 {
     name: 'Ali',
