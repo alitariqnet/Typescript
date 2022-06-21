@@ -1,4 +1,4 @@
-// All the promises you made
+// All the promises I made
 const getTodos = (resource) => {
     
     return new Promise ((resolve, reject)=>{
@@ -68,26 +68,37 @@ let myFirstPromise = new Promise((resolve, reject) => {
   });
 
 // fetch API
-
-fetch('https://imdb-api.com/en/API/Top250Movies/k_12345678')
+// Promise API is under the hood in fetch API
+// the difference is that we get the promise rejected when we have some kind
+// of network error and we can't reach the API for some reason
+fetch('https://imdb-api.com/en/API/Top250Movies/k_u049umz3')
   .then(response => response.json())
-  .then(data => console.log(data));
+  .then(data => console.log('resolved: ',data))
+  .catch(error => console.log('rejected: ',error))
+  .finally(()=> console.log('fetch API ends'));
 
 
-  var xhr = new XMLHttpRequest();
+//   var xhr = new XMLHttpRequest();
  
-xhr.addEventListener("readystatechange", function() {
-  if(this.readyState === 4) {
+// xhr.addEventListener("readystatechange", function() {
+//   if(this.readyState === 4) {
 
-    const data = JSON.parse(this.responseText);
-    console.log(data);
-    const titles = data.items;
-    titles.forEach(element => {
-        console.log(element.title);
-    });
-  }
-});
+//     const data = JSON.parse(this.responseText);
+//     console.log(data);
+//     const titles = data.items;
+//     titles.forEach(element => {
+//         console.log(element.title);
+//     });
+//   }
+// });
  
-xhr.open("GET", "https://imdb-api.com/en/API/Top250Movies/k_u049umz3");
+// xhr.open("GET", "https://imdb-api.com/en/API/Top250Movies/k_u049umz3");
  
-xhr.send();
+// xhr.send();
+
+// Async Await
+const getTodo = async () => {
+ const response = fetch('https://imdb-api.com/en/API/Top250Movies/k_u049umz3');
+ data = response.json();
+ console.log(`data ${data}`);
+};
