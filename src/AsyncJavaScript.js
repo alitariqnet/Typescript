@@ -81,10 +81,10 @@ xhr.addEventListener("readystatechange", function() {
 
     const data = JSON.parse(this.responseText);
     console.log(data);
-    const titles = data.items.title;
-    // titles.forEach(element => {
-        console.log(titles);
-    // });
+    const titles = data.items;
+    titles.forEach(element => {
+        console.log(element.title);
+    });
   }
 });
  
