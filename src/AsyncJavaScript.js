@@ -67,3 +67,27 @@ let myFirstPromise = new Promise((resolve, reject) => {
     console.log("Yay! " + successMessage)
   });
 
+// fetch API
+
+fetch('https://imdb-api.com/en/API/Top250Movies/k_12345678')
+  .then(response => response.json())
+  .then(data => console.log(data));
+
+
+  var xhr = new XMLHttpRequest();
+ 
+xhr.addEventListener("readystatechange", function() {
+  if(this.readyState === 4) {
+
+    const data = JSON.parse(this.responseText);
+    console.log(data);
+    const titles = data.items.title;
+    // titles.forEach(element => {
+        console.log(titles);
+    // });
+  }
+});
+ 
+xhr.open("GET", "https://imdb-api.com/en/API/Top250Movies/k_u049umz3");
+ 
+xhr.send();
