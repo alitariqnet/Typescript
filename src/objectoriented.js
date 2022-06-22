@@ -1,18 +1,17 @@
-class Vehicle{
+console.log('inside objectoriented.js')
 
+class Vehicle{
+    wheels = 4;
 }
 
 class Car extends Vehicle{
-    constuctor(model=`1990`,speed=`100mph`,wheels=4){
+    constuctor(model=`1990`,speed=`100mph`){
         this.model = model;
         this.speed = speed;
-        this.wheel = wheel;
     }
 
 }
 
-let myCar = new Car(`1983`,`100mph`,4);
+let myCar = new Car('1983',`100mph`);
 
-console.log(myCar.model);
-
-console.log(window.Document.length);
+console.log(myCar);

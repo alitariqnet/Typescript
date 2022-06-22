@@ -98,7 +98,13 @@ fetch('https://imdb-api.com/en/API/Top250Movies/k_u049umz3')
 
 // Async Await
 const getTodo = async () => {
- const response = fetch('https://imdb-api.com/en/API/Top250Movies/k_u049umz3');
- data = response.json();
- console.log(`data ${data}`);
+ const response = await fetch('https://imdb-api.com/en/API/MostPopularMovies/k_u049umz3');
+ const data = await response.json();
+    return data;
 };
+
+console.log(1);
+console.log(2);
+getTodo().then(data => console.log('resolved with async await',data))
+.catch(error => console.log('rejected with error message',error.message));
+console.log(3);
