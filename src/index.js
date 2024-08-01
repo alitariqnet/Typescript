@@ -15,7 +15,7 @@ var __extends = (this && this.__extends) || (function () {
 })();
 var id = 5;
 console.log("ID:", id);
-var Pname = "Ali";
+var pName = "Ali";
 var UserAccount = /** @class */ (function () {
     function UserAccount(name, id) {
         this.name = name;
@@ -60,7 +60,21 @@ function logName(x) {
 var obj = {
     x: 0,
     y: 0,
-    name: "Origin"
+    name: "Origin",
 };
 logPoint(obj);
 logName(obj);
+function retArray(arr) {
+    return [1, 2, 3];
+}
+var Car = /** @class */ (function () {
+    function Car() {
+        this.wheels = 4;
+    }
+    Car.prototype.drive = function () {
+        console.log('the car is driving');
+    };
+    return Car;
+}());
+var myCar = new Car();
+console.log(myCar.drive());

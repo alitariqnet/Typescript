@@ -1,7 +1,7 @@
 console.log('inside hoisting.js now')
 // function call before function declaration 
 // default value if not given the argument
-greet();
+// greet();
 greet('Ali');
 // it works
 function greet(name= 'man!'){
@@ -9,9 +9,9 @@ function greet(name= 'man!'){
 }
 // function call before function declaration when function is
 // defined as an expression 
-// speak('Ali');
+speak('Ali');
 // it doesn't works
-// const speak = function(name){
-//     console.log(`Hello ${name}`);
-//   };
+const speak = function(name){
+    console.log(`Hello ${name}`);
+  };
   

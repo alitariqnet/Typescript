@@ -9,7 +9,7 @@ interface User {
     id: number;
   }
    
-  class UserAccount {
+  class UserAccount implements User{
     name: string;
     id: number;
    
@@ -23,7 +23,7 @@ interface User {
 
   const any: any = [1,'hello',true]
 
-  let s: any = 'pepeLaugh'
+  let s: any = 'smile'
 
   s = 10
   console.log('s:',s)
@@ -102,8 +102,45 @@ interface User {
     wheels: number = 4
 
     drive(){
-        console.log('the car is driving')
+        console.log('the car is running')
     }
 }
 let myCar: Car = new Car()
 console.log(myCar.drive())
+
+
+console.log('changes')
+
+// lets practice any type
+
+let a: any = 0
+
+console.log(a)
+
+a = 'something'
+
+console.log(a)
+
+let arrayOfAnyType: any[] = ['name',true,1,'c']
+
+console.log(arrayOfAnyType)
+
+class Base {
+  greet() {
+    console.log("Hello, world!");
+  }
+}
+ 
+class Derived extends Base {
+  greet(name?: string) {
+    if (name === undefined) {
+      super.greet();
+    } else {
+      console.log(`Hello, ${name.toUpperCase()}`);
+    }
+  }
+}
+ 
+const d = new Derived();
+d.greet();
+d.greet("reader");
