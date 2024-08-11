@@ -1,29 +1,35 @@
 // All the promises I made
-const getTodos = (resource) => {
+// const getTodos = (resource) => {
     
-    return new Promise ((resolve, reject)=>{
-        const request = new XMLHttpRequest();
+//     return new Promise ((resolve, reject)=>{
+//         const request = new XMLHttpRequest();
 
-        request.addEventListener('readystatechange',()=>{
-            if(request.readyState===4 && request.status===200){
-                const data = JSON.parse(request.responseText);
-            //callback(undefined, data);
-            resolve(data);
-            } 
-            else if(request.readyState===4){
-                //callback('could not fetch data',undefined);
-                reject('Promise brought failure');
-            }
-        });
+//         request.addEventListener('readystatechange',()=>{
+//             if(request.readyState===4 && request.status===200){
+//                 const data = JSON.parse(request.responseText);
+//             //callback(undefined, data);
+//                 console.log('inside resolved block')
+
+//                 resolve(data);
+//             } 
+//             else if(request.readyState===4){
+//                 //callback('could not fetch data',undefined);
+//                 console.log('inside reject block')
+
+//                 reject('Promise brought failure');
+//             }
+//         });
         
-        request.open('GET', resource);
-        request.send();
-    });
+//         request.open('GET', resource);
+//         request.send();
+//     });
 
-};
-getTodos('todos/luiji.json').then(data => console.log('Promise resolved:',data))
-                            .catch(error => console.log('Promise rejected:', error))
-                            .finally(() => console.log('do nothing'));
+// };
+
+// getTodos('https://jsonplaceholder.typicode.com/todos')
+                            // .then(data => console.log('Promise resolved:', data))
+                            // .catch(error => console.log('Promise rejected:', error))
+                            // .finally(() => console.log('do nothing'));
 // console.log(1);
 // console.log(2);
 
@@ -55,7 +61,7 @@ getTodos('todos/luiji.json').then(data => console.log('Promise resolved:',data))
 let myFirstPromise = new Promise((resolve, reject) => {
     // We call resolve(...) when what we were doing asynchronously was successful, and reject(...) when it failed.
     // In this example, we use setTimeout(...) to simulate async code.
-    // In reality, you will probably be using something like XHR or an HTML5 API.
+    // In reality, you will probably be using something like XHR or an HTML5 API such as fetch API.
     setTimeout( function() {
       resolve("Success!")  // Yay! Everything went well!
     }, 250)
@@ -65,13 +71,19 @@ let myFirstPromise = new Promise((resolve, reject) => {
     // successMessage is whatever we passed in the resolve(...) function above.
     // It doesn't have to be a string, but if it is only a succeed message, it probably will be.
     console.log("Yay! " + successMessage)
+  }).catch(
+    () => {
+      console.log('Nah! it failed')
+    }
+  ).finally(()=>{
+    console.log('whatever, just finish it');
   });
 
 // fetch API
 // Promise API is under the hood in fetch API
 // the difference is that we get the promise rejected when we have some kind
 // of network error and we can't reach the API for some reason
-fetch('https://imdb-api.com/en/API/Top250Movies/k_u049umz3')
+fetch('https://jsonplaceholder.typicode.com/users/1')
   .then(response => response.json())
   .then(data => console.log('resolved: ',data))
   .catch(error => console.log('rejected: ',error))
@@ -98,13 +110,15 @@ fetch('https://imdb-api.com/en/API/Top250Movies/k_u049umz3')
 
 // Async Await
 const getTodo = async () => {
- const response = await fetch('https://imdb-api.com/en/API/MostPopularMovies/k_u049umz3');
+ const response = await fetch('https://jsonplaceholder.typicode.com/users/2');
  const data = await response.json();
     return data;
 };
 
-console.log(1);
-console.log(2);
+console.log('112');
+console.log('113');
+
 getTodo().then(data => console.log('resolved with async await',data))
 .catch(error => console.log('rejected with error message',error.message));
+
 console.log(3);
