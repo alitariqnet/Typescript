@@ -19,7 +19,19 @@ const speak = function(name= 'woman!'){
     console.log(`Hello ${name}`);
   };
   
-  var foo;
-  console.log(foo); // Uncaught ReferenceError: foo is not defined
-  foo = 'foo'; 
-  console.log(foo); 
+//   var foo;
+  console.log(fool); // Uncaught ReferenceError: foo is not defined
+  var fool = 'foo'; 
+  console.log(fool); 
+
+  function foo(_var){
+    if(_var){
+        let message = `var is not null -> ${_var}`;
+        console.log(message)
+    }
+  }
+  foo();
+
+  let fooli;
+  const bar = null;
+  console.log(typeof undefined == typeof null)
